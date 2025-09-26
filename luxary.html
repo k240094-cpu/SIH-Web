@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Tips - Wanderlust Trails</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'poppins': ['Poppins', 'sans-serif'],
+            'merriweather': ['Merriweather', 'serif'],
+          },
+          colors: {
+            'nature-green': '#2D5016',
+            'earth-brown': '#8B4513',
+            'sky-blue': '#87CEEB',
+            'sunset-orange': '#FF6B35',
+            'forest-green': '#355E3B',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .tips-parallax {
+      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('./images/northAmericaHero.jpg');
+    }
+    .accordion-content { display: none; }
+  </style>
+</head>
+<body class="font-poppins">
+
+  <!-- Header -->
+    <header class="sticky-header bg-white shadow-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-mountain text-2xl text-nature-green"></i>
+                    <span class="text-2xl font-bold text-nature-green">Wanderlust Trails</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-nature-green transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-nature-green transition-colors">About Us</a>
+                    <div class="relative group">
+                        <a href="destinations.html" class="text-gray-700 hover:text-nature-green transition-colors">Destinations</a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="asia.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Asia</a>
+                            <a href="europe.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Europe</a>
+                            <a href="northamerica.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">North America</a>
+                            <a href="southamerica.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">South America</a>
+                            <a href="africa.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Africa</a>
+                        </div>
+                    </div>
+                    <a href="reservations.html" class="text-gray-700 hover:text-nature-green transition-colors">hotel & Resort</a>
+                     <div class="relative group">
+                        <a href="traveltip.html" class="text-gray-700 hover:text-nature-green transition-colors">Travel</a>
+                        <div class="absolute left-0 z-20 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="Luxary.html" class="text-nature-green font-semibold">Luxary Travel</a>
+        
+                    </div>
+                    </div>
+                    <a href="contact.html" class="text-gray-700 hover:text-nature-green transition-colors">Contact</a>
+                    <a href="career.html" class="text-gray-700 hover:text-nature-green transition-colors">Career</a>
+                    <a href="reference.html" class="text-gray-700 hover:text-nature-green transition-colors">Reference</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-2xl text-nature-green"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-nature-green">Home</a>
+                <a href="about.html" class="block py-2 text-gray-700 hover:text-nature-green">About Us</a>
+                 <a href="destinations.html" class="block py-2 text-gray-700 hover:text-nature-green">Destinations</a>
+               <div class="pl-4 border-l-2 border-gray-200 ml-4">
+                    <a href="asia.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Asia</a>
+                    <a href="europe.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Europe</a>
+                    <a href="northamerica.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• North America</a>
+                    <a href="southamerica.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• South America</a>
+                    <a href="africa.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Africa</a>
+                </div>
+                <a href="reservations.html" class="block py-2 text-gray-700 hover:text-nature-green">Hotel & Resort</a>
+                <a href="traveltip.html" class="block py-2 text-gray-700 hover:text-nature-green">Travel</a>
+                     <div class="pl-4 z-20 border-l-2 border-gray-200 ml-4">
+                    <a href="luxary.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Luxury Travel</a>
+                </div>
+                <a href="contact.html" class="block py-2 text-gray-700 hover:text-nature-green">Contact</a>
+                <a href="cerrer.html" class="block py-2 text-gray-700 hover:text-nature-green">Career</a>
+                <a href="references.html" class="block py-2 text-gray-700 hover:text-nature-green">Reference</a>
+            </div>
+        </nav>
+    </header>
+
+  <!-- Hero -->
+
+
+  <!-- Luxury Experiences -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6 max-w-5xl">
+      <h2 class="text-4xl font-bold text-center text-nature-green mb-12">The Art of Luxury Travel</h2>
+      <p class="text-lg text-gray-700 font-merriweather text-center mb-12">
+        Luxury travel is not just about five-star hotels and fine dining. It’s about creating unique, 
+        personalized journeys that blend comfort, exclusivity, and cultural immersion. At Wanderlust Trails, 
+        we explore the world’s most luxurious experiences — from private islands to Michelin-starred adventures.
+      </p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="./images/private.avif" alt="Private Villas" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 text-forest-green">Private Villas</h3>
+            <p class="text-gray-600 font-merriweather">Experience privacy and elegance in breathtaking villas across the globe.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="./images/fine.jpg" alt="Fine Dining" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 text-forest-green">Fine Dining</h3>
+            <p class="text-gray-600 font-merriweather">Savor world-class cuisines at Michelin-starred restaurants and hidden gems.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="./images/private2.jpg" alt="Private Yacht" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 text-forest-green">Private Yachts</h3>
+            <p class="text-gray-600 font-merriweather">Sail crystal-clear waters on exclusive yachts designed for ultimate relaxation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center space-x-2 mb-4">
+          <i class="fas fa-mountain text-2xl text-nature-green"></i>
+          <span class="text-xl font-bold">Wanderlust Trails</span>
+        </div>
+        <p class="text-gray-400 font-merriweather">Inspiring wanderers to explore the world's most beautiful destinations through authentic travel stories and practical guides.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+          <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+          <li><a href="privacy.html" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+          <li><a href="terms.html" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Categories</h3>
+        <ul class="space-y-2">
+          <li><a href="destinations.html" class="text-gray-400 hover:text-white">Destinations</a></li>
+          <li><a href="traveltip.html" class="text-gray-400 hover:text-white">Travel Tips</a></li>
+          <li><a href="packing-lists.html" class="text-gray-400 hover:text-white">Packing Lists</a></li>
+          <li><a href="photo-essays.html" class="text-gray-400 hover:text-white">Photo Essays</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+        <div class="flex space-x-4 text-2xl">
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+      <p>&copy; 2025 Wanderlust Trails. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleAccordion(button) {
+      const content = button.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+
+    // Mobile Menu Toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
+  <!-- W3C Validation Icon -->
+  <div style="position: fixed; bottom: 20px; right: 20px;">
+    <a href="http://validator.w3.org/">
+      <img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML" width="80" height="31">
+    </a>
+  </div>
+</body>
+</html>

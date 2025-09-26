@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust Trails - Adventure Awaits</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'merriweather': ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        'nature-green': '#2D5016',
+                        'earth-brown': '#8B4513',
+                        'sky-blue': '#87CEEB',
+                        'sunset-orange': '#FF6B35',
+                        'forest-green': '#355E3B',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-poppins">
+    <!-- Sticky Header -->
+    <header class="sticky-header bg-white shadow-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-mountain text-2xl text-nature-green"></i>
+                    <span class="text-2xl font-bold text-nature-green">Wanderlust Trails</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-nature-green transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-nature-green transition-colors">About Us</a>
+                    <div class="relative group">
+                        <a href="destinations.html" class="text-gray-700 hover:text-nature-green transition-colors">Destinations</a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="asia.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Asia</a>
+                            <a href="europe.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Europe</a>
+                            <a href="northamerica.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">North America</a>
+                            <a href="southamerica.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">South America</a>
+                            <a href="africa.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Africa</a>
+                        </div>
+                    </div>
+                    <a href="reservations.html" class="text-gray-700 hover:text-nature-green transition-colors">hotel & Resort</a>
+                     <div class="relative group">
+                        <a href="traveltip.html" class="text-gray-700 hover:text-nature-green transition-colors">Travel</a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="Luxary.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Luxary Travel</a>
+        
+                    </div>
+                    </div>
+                    <a href="contact.html" class="text-gray-700 hover:text-nature-green transition-colors">Contact</a>
+                    <a href="career.html" class="text-gray-700 hover:text-nature-green transition-colors">Career</a>
+                    <a href="reference.html" class="text-gray-700 hover:text-nature-green transition-colors">Reference</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-2xl text-nature-green"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-nature-green">Home</a>
+                <a href="about.html" class="block py-2 text-gray-700 hover:text-nature-green">About Us</a>
+                 <a href="destinations.html" class="block py-2 text-gray-700 hover:text-nature-green">Destinations</a>
+               <div class="pl-4 border-l-2 border-gray-200 ml-4">
+                    <a href="asia.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Asia</a>
+                    <a href="europe.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Europe</a>
+                    <a href="northamerica.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• North America</a>
+                    <a href="southamerica.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• South America</a>
+                    <a href="africa.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Africa</a>
+                </div>
+                <a href="reservations.html" class="block py-2 text-gray-700 hover:text-nature-green">Hotel & Resort</a>
+                <a href="traveltip.html" class="block py-2 text-gray-700 hover:text-nature-green">Travel</a>
+                     <div class="pl-4 border-l-2 border-gray-200 ml-4">
+                    <a href="luxary.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Luxury Travel</a>
+                </div>
+                <a href="contact.html" class="block py-2 text-gray-700 hover:text-nature-green">Contact</a>
+                <a href="cerrer.html" class="block py-2 text-gray-700 hover:text-nature-green">Career</a>
+                <a href="references.html" class="block py-2 text-gray-700 hover:text-nature-green">Reference</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Parallax -->
+    <section class="hero-parallax h-screen flex items-center justify-center text-white text-center parallax">
+        <div class="animate-fade-in">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">Adventure Awaits</h1>
+            <p class="text-xl md:text-2xl mb-8 font-merriweather">Discover the world's most breathtaking destinations</p>
+            <button onclick="showWelcomePopup()" class="bg-sunset-orange hover:bg-opacity-90 px-8 py-3 rounded-full text-lg font-semibold transition-all transform hover:scale-105">
+                Start Your Journey
+            </button>
+        </div>
+    </section>
+
+    <!-- Featured Posts Carousel -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-nature-green">Featured Adventures</h2>
+            
+            <div class="carousel-container rounded-lg overflow-hidden shadow-2xl">
+                <div id="carousel-track" class="carousel-track">
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide relative">
+                        <img src="./images/slider1.jpeg" 
+                             alt="Mountain Adventure" class="w-full h-96 object-cover lazy">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h3 class="text-3xl font-bold mb-4">Himalayan Heights</h3>
+                                <p class="text-lg font-merriweather">Experience the majesty of the world's highest peaks</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide relative">
+                        <img src="./images/slider2.jpeg" 
+                             alt="Tropical Paradise" class="w-full h-96 object-cover lazy">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h3 class="text-3xl font-bold mb-4">Tropical Paradise</h3>
+                                <p class="text-lg font-merriweather">Pristine beaches and crystal-clear waters await</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide relative">
+                        <img src="./images/slider3.jpeg" 
+                             alt="Forest Trail" class="w-full h-96 object-cover lazy">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h3 class="text-3xl font-bold mb-4">Forest Trails</h3>
+                                <p class="text-lg font-merriweather">Immerse yourself in nature's tranquil beauty</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Navigation -->
+                <button onclick="previousSlide()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-40 text-white p-2 rounded-full">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="nextSlide()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-40 text-white p-2 rounded-full">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section py-16 text-white text-center">
+        <div class="container mx-auto px-6">
+            <blockquote class="text-2xl md:text-4xl font-merriweather italic mb-4">
+                "The world is a book, and those who do not travel read only one page."
+            </blockquote>
+            <cite class="text-lg">- Augustine of Hippo</cite>
+        </div>
+    </section>
+
+    <!-- Latest Blog Posts -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-nature-green">Latest Stories</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all">
+                    <img src="./images/post1.jpeg" 
+                         alt="Backpacking Europe" class="w-full h-48 object-cover lazy">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Backpacking Through Europe: A Complete Guide</h3>
+                        <p class="text-gray-600 font-merriweather mb-4">Discover the best routes, budget tips, and hidden gems across European capitals...</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-calendar mr-2"></i>
+                            <span>March 15, 2025</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 2 -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all">
+                    <img src="./images/post2.jpeg" 
+                         alt="Mountain Hiking" class="w-full h-48 object-cover lazy">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Essential Mountain Hiking Gear</h3>
+                        <p class="text-gray-600 font-merriweather mb-4">Everything you need to know about proper equipment for high-altitude adventures...</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-calendar mr-2"></i>
+                            <span>March 10, 2025</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 3 -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all">
+                    <img src="./images/post3.jpeg" 
+                         alt="Solo Travel" class="w-full h-48 object-cover lazy">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Solo Travel: Finding Yourself on the Road</h3>
+                        <p class="text-gray-600 font-merriweather mb-4">The transformative power of traveling alone and embracing new experiences...</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-calendar mr-2"></i>
+                            <span>March 5, 2025</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- View More Button -->
+            <div class="text-center mt-12">
+                <button onclick="showMorePosts()" class="bg-nature-green hover:bg-forest-green text-white px-8 py-3 rounded-full font-semibold transition-colors">
+                    View More Stories
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription -->
+    <section class="bg-nature-green py-16 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Never Miss an Adventure</h2>
+            <p class="text-lg mb-8 font-merriweather">Subscribe to our newsletter for the latest travel stories and tips</p>
+            
+            <form class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Enter your email" 
+                       class="flex-1 px-4 py-3 rounded-l-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-sunset-orange">
+                <button type="submit" class="bg-sunset-orange hover:bg-opacity-90 px-6 py-3 rounded-r-full font-semibold transition-colors">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-mountain text-2xl text-nature-green"></i>
+                        <span class="text-xl font-bold">Wanderlust Trails</span>
+                    </div>
+                    <p class="text-gray-400 font-merriweather">Inspiring wanderers to explore the world's most beautiful destinations through authentic travel stories and practical guides.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="destinations.html" class="text-gray-400 hover:text-white transition-colors">Destinations</a></li>
+                        <li><a href="traveltip.html" class="text-gray-400 hover:text-white transition-colors">Travel Tips</a></li>
+                        <li><a href="packing-lists.html" class="text-gray-400 hover:text-white transition-colors">Packing Lists</a></li>
+                        <li><a href="photo-essays.html" class="text-gray-400 hover:text-white transition-colors">Photo Essays</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-google-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 Wanderlust Trails. All rights reserved. | Designed with <i class="fas fa-heart text-red-500"></i> for travelers worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- W3C HTML5 Validation Icon -->
+  <div style="position: fixed; bottom: 20px; right: 20px;">
+    <a href="http://validator.w3.org/">
+      <img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML" width="80" height="31">
+    </a>
+  </div>
+   <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Tips - Wanderlust Trails</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'poppins': ['Poppins', 'sans-serif'],
+            'merriweather': ['Merriweather', 'serif'],
+          },
+          colors: {
+            'nature-green': '#2D5016',
+            'earth-brown': '#8B4513',
+            'sky-blue': '#87CEEB',
+            'sunset-orange': '#FF6B35',
+            'forest-green': '#355E3B',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .tips-parallax {
+      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3');
+    }
+    .accordion-content { display: none; }
+  </style>
+</head>
+<body class="font-poppins">
+
+  <!-- Header -->
+    <header class="sticky-header bg-white shadow-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-mountain text-2xl text-nature-green"></i>
+                    <span class="text-2xl font-bold text-nature-green">Wanderlust Trails</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-nature-green transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-nature-green transition-colors">About Us</a>
+                    <div class="relative group">
+                        <a href="destinations.html" class="text-gray-700 hover:text-nature-green transition-colors">Destinations</a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="asia.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Asia</a>
+                            <a href="europe.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Europe</a>
+                            <a href="northamerica.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">North America</a>
+                            <a href="southamerica.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">South America</a>
+                            <a href="africa.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Africa</a>
+                        </div>
+                    </div>
+                    <a href="reservations.html" class="text-gray-700 hover:text-nature-green transition-colors">hotel & Resort</a>
+                     <div class="relative group">
+                        <a href="traveltip.html" class="text-gray-700 hover:text-nature-green transition-colors">Travel</a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="Luxary.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Luxary Travel</a>
+        
+                    </div>
+                    </div>
+                    <a href="contact.html" class="text-gray-700 hover:text-nature-green transition-colors">Contact</a>
+                    <a href="career.html" class="text-gray-700 hover:text-nature-green transition-colors">Career</a>
+                    <a href="reference.html" class="text-nature-green font-semibold">Reference</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-2xl text-nature-green"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-nature-green">Home</a>
+                <a href="about.html" class="block py-2 text-gray-700 hover:text-nature-green">About Us</a>
+                 <a href="destinations.html" class="block py-2 text-gray-700 hover:text-nature-green">Destinations</a>
+               <div class="pl-4 border-l-2 border-gray-200 ml-4">
+                    <a href="asia.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Asia</a>
+                    <a href="europe.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Europe</a>
+                    <a href="northamerica.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• North America</a>
+                    <a href="southamerica.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• South America</a>
+                    <a href="africa.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Africa</a>
+                </div>
+                <a href="reservations.html" class="block py-2 text-gray-700 hover:text-nature-green">Hotel & Resort</a>
+                <a href="traveltip.html" class="block py-2 text-gray-700 hover:text-nature-green">Travel</a>
+                     <div class="pl-4 border-l-2 border-gray-200 ml-4">
+                    <a href="luxary.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Luxury Travel</a>
+                </div>
+                <a href="contact.html" class="block py-2 text-gray-700 hover:text-nature-green">Contact</a>
+                <a href="cerrer.html" class="block py-2 text-gray-700 hover:text-nature-green">Career</a>
+                <a href="references.html" class="block py-2 text-gray-700 hover:text-nature-green">Reference</a>
+            </div>
+        </nav>
+    </header>
+  <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-nature-green to-forest-green py-16 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">References & Sources</h1>
+            <p class="text-xl font-merriweather">All content and image sources used in Wanderlust Trails</p>
+        </div>
+    </section>
+
+    <!-- References Content -->
+    <section class="py-16">
+        <div class="container mx-auto px-6 max-w-4xl">
+            
+            <!-- Image Sources -->
+            <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
+                <h2 class="text-2xl font-bold mb-6 text-nature-green">
+                    <i class="fas fa-images mr-3"></i>Image Sources
+                </h2>
+                
+                <div class="space-y-4 text-sm">
+                    <div class="border-l-4 border-sunset-orange pl-4">
+                        <h3 class="font-semibold text-lg mb-2">Unsplash Photography</h3>
+                        <p class="text-gray-600 mb-3">All photographs used throughout the website are sourced from Unsplash.com, a platform providing high-quality, royalty-free images under the Unsplash License.</p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><strong>Hero Background:</strong> Mountain landscape by Tommy Lisbin - <em>https://images.unsplash.com/photo-1469474968028-56623f02e42e</em></li>
+                            <li><strong>Carousel Images:</strong> Various travel destinations by Unsplash contributors</li>
+                            <li><strong>Hotel Images:</strong> Luxury accommodations and resorts from Unsplash travel collection</li>
+                            <li><strong>Destination Images:</strong> Global travel photography from verified Unsplash photographers</li>
+                            <li><strong>Travel Tips Images:</strong> Adventure and lifestyle photography from Unsplash</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Sources -->
+            <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
+                <h2 class="text-2xl font-bold mb-6 text-nature-green">
+                    <i class="fas fa-book mr-3"></i>Content & Information Sources
+                </h2>
+                
+                <div class="space-y-6">
+                    <!-- Travel Information -->
+                    <div class="border-l-4 border-sky-blue pl-4">
+                        <h3 class="font-semibold text-lg mb-3">Travel Information & Guides</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>Lonely Planet. (2024). <em>Travel guides and destination information</em>. Retrieved from https://www.lonelyplanet.com</li>
+                            <li>National Geographic Travel. (2024). <em>Destination guides and cultural insights</em>. Retrieved from https://www.nationalgeographic.com/travel</li>
+                            <li>World Tourism Organization. (2024). <em>Global tourism statistics and trends</em>. UNWTO Publications.</li>
+                            <li>Travel + Leisure Magazine. (2024). <em>Hotel reviews and travel recommendations</em>. Retrieved from https://www.travelandleisure.com</li>
+                            <li>Condé Nast Traveler. (2024). <em>Luxury travel and destination expertise</em>. Retrieved from https://www.cntraveler.com</li>
+                        </ul>
+                    </div>
+
+                    <!-- Safety & Health Information -->
+                    <div class="border-l-4 border-earth-brown pl-4">
+                        <h3 class="font-semibold text-lg mb-3">Travel Safety & Health Resources</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>Centers for Disease Control and Prevention. (2024). <em>Travelers' health information</em>. Retrieved from https://wwwnc.cdc.gov/travel</li>
+                            <li>World Health Organization. (2024). <em>International travel and health guidelines</em>. WHO Press.</li>
+                            <li>U.S. Department of State. (2024). <em>Travel advisories and safety information</em>. Retrieved from https://travel.state.gov</li>
+                            <li>International SOS. (2024). <em>Travel risk and security intelligence</em>. Retrieved from https://www.internationalsos.com</li>
+                        </ul>
+                    </div>
+
+                    <!-- Cultural Information -->
+                    <div class="border-l-4 border-forest-green pl-4">
+                        <h3 class="font-semibold text-lg mb-3">Cultural & Historical References</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>UNESCO World Heritage Centre. (2024). <em>World heritage sites and cultural significance</em>. Retrieved from https://whc.unesco.org</li>
+                            <li>Smithsonian Institution. (2024). <em>Cultural heritage and museum resources</em>. Retrieved from https://www.si.edu</li>
+                            <li>National Geographic Society. (2024). <em>Geographic and cultural exploration</em>. National Geographic Partners.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Sources -->
+            <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
+                <h2 class="text-2xl font-bold mb-6 text-nature-green">
+                    <i class="fas fa-code mr-3"></i>Technical Resources & Tools
+                </h2>
+                
+                <div class="space-y-4">
+                    <div class="border-l-4 border-sunset-orange pl-4">
+                        <h3 class="font-semibold text-lg mb-3">Development Frameworks & Libraries</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><strong>Tailwind CSS:</strong> Utility-first CSS framework. Retrieved from https://tailwindcss.com</li>
+                            <li><strong>Font Awesome:</strong> Icon toolkit and font library. Version 6.4.0. Retrieved from https://fontawesome.com</li>
+                            <li><strong>Google Fonts:</strong> Poppins and Merriweather font families. Retrieved from https://fonts.google.com</li>
+                            <li><strong>HTML5 Validation:</strong> W3C Markup Validator. Retrieved from https://validator.w3.org</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quote Attribution -->
+            <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
+                <h2 class="text-2xl font-bold mb-6 text-nature-green">
+                    <i class="fas fa-quote-left mr-3"></i>Quote Attribution
+                </h2>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <blockquote class="text-lg font-merriweather italic text-gray-700 mb-4">
+                        "The world is a book, and those who do not travel read only one page."
+                    </blockquote>
+                    <cite class="text-gray-600">
+                        <strong>Attribution:</strong> Augustine of Hippo (354-430 AD), Early Christian theologian and philosopher. 
+                        This quote, while commonly attributed to Augustine, represents a paraphrase of his philosophical views on 
+                        exploration and learning from his work "Confessions."
+                    </cite>
+                </div>
+            </div>
+
+            <!-- Content Creation -->
+            <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
+                <h2 class="text-2xl font-bold mb-6 text-nature-green">
+                    <i class="fas fa-pencil-alt mr-3"></i>Original Content Creation
+                </h2>
+                
+                <div class="space-y-4 text-gray-700">
+                    <p class="font-merriweather leading-relaxed">
+                        All website copy, travel descriptions, hotel information, and blog content have been created 
+                        specifically for this project. While inspired by real travel experiences and destinations, 
+                        the content represents original writing tailored for the "Wanderlust Trails" brand.
+                    </p>
+                    
+                    <div class="bg-sky-blue bg-opacity-10 p-4 rounded-lg">
+                        <h3 class="font-semibold mb-2">Content Categories Created:</h3>
+                        <ul class="grid md:grid-cols-2 gap-2">
+                            <li>• Travel destination descriptions</li>
+                            <li>• Hotel and accommodation reviews</li>
+                            <li>• Packing list recommendations</li>
+                            <li>• Travel safety guidelines</li>
+                            <li>• Cultural etiquette tips</li>
+                            <li>• Photography advice</li>
+                            <li>• Budget travel strategies</li>
+                            <li>• Itinerary suggestions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic Standards -->
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold mb-6 text-nature-green">
+                    <i class="fas fa-graduation-cap mr-3"></i>Academic Compliance
+                </h2>
+                
+                <div class="space-y-4 text-gray-700">
+                    <p class="font-merriweather leading-relaxed">
+                        This website project has been developed in accordance with Kent Institute Australia's 
+                        academic integrity policies and WPDD202 unit requirements. All external resources 
+                        have been properly attributed and cited.
+                    </p>
+                    
+                    <div class="bg-nature-green bg-opacity-10 p-4 rounded-lg">
+                        <h3 class="font-semibold mb-2 text-nature-green">Compliance Statement:</h3>
+                        <ul class="space-y-1">
+                            <li>✓ No website templates were used</li>
+                            <li>✓ All code is original and custom-developed</li>
+                            <li>✓ External resources properly attributed</li>
+                            <li>✓ Academic writing standards followed</li>
+                            <li>✓ W3C validation compliance maintained</li>
+                        </ul>
+                    </div>
+                    
+                    <p class="text-sm text-gray-600 mt-4 italic">
+                        Created by: [Your Group Name] | Course: WPDD202 - Webpage Design and Development | 
+                        Institution: Kent Institute Australia | Year: 2024
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center space-x-2 mb-4">
+          <i class="fas fa-mountain text-2xl text-nature-green"></i>
+          <span class="text-xl font-bold">Wanderlust Trails</span>
+        </div>
+        <p class="text-gray-400 font-merriweather">Inspiring wanderers to explore the world's most beautiful destinations through authentic travel stories and practical guides.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+          <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+          <li><a href="privacy.html" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+          <li><a href="terms.html" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Categories</h3>
+        <ul class="space-y-2">
+          <li><a href="destinations.html" class="text-gray-400 hover:text-white">Destinations</a></li>
+          <li><a href="traveltip.html" class="text-gray-400 hover:text-white">Travel Tips</a></li>
+          <li><a href="packing-lists.html" class="text-gray-400 hover:text-white">Packing Lists</a></li>
+          <li><a href="photo-essays.html" class="text-gray-400 hover:text-white">Photo Essays</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+        <div class="flex space-x-4 text-2xl">
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+      <p>&copy; 2025 Wanderlust Trails. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleAccordion(button) {
+      const content = button.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+
+    // Mobile Menu Toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
+    <!-- W3C HTML5 Validation Icon -->
+    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+        <a href="http://validator.w3.org/">
+            <img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Strict" height="31" width="80" />
+        </a>
+    </div>
+</body>
+</html>

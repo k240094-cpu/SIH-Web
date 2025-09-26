@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Wanderlust Trails</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'merriweather': ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        'nature-green': '#2D5016',
+                        'earth-brown': '#8B4513',
+                        'sky-blue': '#87CEEB',
+                        'sunset-orange': '#FF6B35',
+                        'forest-green': '#355E3B',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .contact-hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./images/contactHero.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .form-floating:focus-within label {
+            transform: translateY(-20px) scale(0.85);
+            color: #2D5016;
+        }
+        
+        .form-floating label {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-poppins">
+    <!-- Sticky Header -->
+     <header class="sticky-header bg-white shadow-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-mountain text-2xl text-nature-green"></i>
+                    <span class="text-2xl font-bold text-nature-green">Wanderlust Trails</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-nature-green transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-nature-green transition-colors">About Us</a>
+                    <div class="relative group">
+                        <a href="destinations.html" class="text-gray-700 hover:text-nature-green transition-colors">Destinations</a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="asia.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Asia</a>
+                            <a href="europe.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Europe</a>
+                            <a href="northamerica.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">North America</a>
+                            <a href="southamerica.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">South America</a>
+                            <a href="africa.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Africa</a>
+                        </div>
+                    </div>
+                    <a href="reservations.html" class="text-gray-700 hover:text-nature-green transition-colors">hotel & Resort</a>
+                     <div class="relative group">
+                        <a href="traveltip.html" class="text-gray-700 hover:text-nature-green transition-colors">Travel</a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="Luxary.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Luxary Travel</a>
+        
+                    </div>
+                    </div>
+                    <a href="contact.html" class="text-nature-green font-semibold">Contact</a>
+                    <a href="career.html" class="text-gray-700 hover:text-nature-green transition-colors">Career</a>
+                    <a href="reference.html" class="text-gray-700 hover:text-nature-green transition-colors">Reference</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-2xl text-nature-green"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-nature-green">Home</a>
+                <a href="about.html" class="block py-2 text-gray-700 hover:text-nature-green">About Us</a>
+                 <a href="destinations.html" class="block py-2 text-gray-700 hover:text-nature-green">Destinations</a>
+               <div class="pl-4 border-l-2 border-gray-200 ml-4">
+                    <a href="asia.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Asia</a>
+                    <a href="europe.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Europe</a>
+                    <a href="northamerica.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• North America</a>
+                    <a href="southamerica.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• South America</a>
+                    <a href="africa.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Africa</a>
+                </div>
+                <a href="reservations.html" class="block py-2 text-gray-700 hover:text-nature-green">Hotel & Resort</a>
+                <a href="traveltip.html" class="block py-2 text-gray-700 hover:text-nature-green">Travel</a>
+                     <div class="pl-4 border-l-2 border-gray-200 ml-4">
+                    <a href="luxary.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Luxury Travel</a>
+                </div>
+                <a href="contact.html" class="block py-2 text-gray-700 hover:text-nature-green">Contact</a>
+                <a href="cerrer.html" class="block py-2 text-gray-700 hover:text-nature-green">Career</a>
+                <a href="references.html" class="block py-2 text-gray-700 hover:text-nature-green">Reference</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero h-64 flex items-center justify-center text-white">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Get in Touch</h1>
+            <p class="text-xl font-merriweather">We'd love to hear about your travel dreams</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form (Required by assignment) -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h2 class="text-3xl font-bold mb-6 text-nature-green">
+                        <i class="fas fa-envelope mr-3"></i>Send us a Message
+                    </h2>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <!-- Name Field -->
+                        <div class="relative">
+                            <input type="text" id="fullName" name="fullName" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-nature-green focus:border-transparent outline-none peer"
+                                   placeholder=" ">
+                            <label for="fullName" class="absolute left-4 top-3 text-gray-500 transition-all duration-300 pointer-events-none peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-nature-green peer-valid:-top-2 peer-valid:text-sm">
+                                Full Name *
+                            </label>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="relative">
+                            <input type="email" id="email" name="email" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-nature-green focus:border-transparent outline-none peer"
+                                   placeholder=" ">
+                            <label for="email" class="absolute left-4 top-3 text-gray-500 transition-all duration-300 pointer-events-none peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-nature-green peer-valid:-top-2 peer-valid:text-sm">
+                                Email Address *
+                            </label>
+                        </div>
+
+                        <!-- Phone Field -->
+                        <div class="relative">
+                            <input type="tel" id="phone" name="phone"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-nature-green focus:border-transparent outline-none peer"
+                                   placeholder=" ">
+                            <label for="phone" class="absolute left-4 top-3 text-gray-500 transition-all duration-300 pointer-events-none peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-nature-green peer-valid:-top-2 peer-valid:text-sm">
+                                Phone Number
+                            </label>
+                        </div>
+
+                        <!-- Travel Interest -->
+                        <div>
+                            <label for="travelInterest" class="block text-sm font-medium text-gray-700 mb-2">Travel Interest</label>
+                            <select id="travelInterest" name="travelInterest" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-nature-green focus:border-transparent outline-none">
+                                <option value="">Select your interest</option>
+                                <option value="adventure">Adventure Travel</option>
+                                <option value="cultural">Cultural Exploration</option>
+                                <option value="relaxation">Beach & Relaxation</option>
+                                <option value="wildlife">Wildlife Safari</option>
+                                <option value="urban">City Exploration</option>
+                                <option value="photography">Photography Tours</option>
+                            </select>
+                        </div>
+
+                        <!-- Budget Range -->
+                        <div>
+                            <label for="budget" class="block text-sm font-medium text-gray-700 mb-2">Budget Range (USD)</label>
+                            <input type="range" id="budget" name="budget" min="500" max="10000" value="2500" 
+                                   class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider">
+                            <div class="flex justify-between text-sm text-gray-500 mt-2">
+                                <span>$500</span>
+                                <span id="budgetValue" class="font-semibold text-nature-green">$2,500</span>
+                                <span>$10,000+</span>
+                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="relative">
+                            <textarea id="message" name="message" rows="5" required
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-nature-green focus:border-transparent outline-none peer resize-none"
+                                      placeholder=" "></textarea>
+                            <label for="message" class="absolute left-4 top-3 text-gray-500 transition-all duration-300 pointer-events-none peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-nature-green peer-valid:-top-2 peer-valid:text-sm">
+                                Tell us about your dream destination *
+                            </label>
+                        </div>
+
+                        <!-- Newsletter Subscription -->
+                        <div class="flex items-center">
+                            <input type="checkbox" id="newsletter" name="newsletter" 
+                                   class="w-4 h-4 text-nature-green bg-gray-100 border-gray-300 rounded focus:ring-nature-green">
+                            <label for="newsletter" class="ml-2 text-sm text-gray-700">
+                                Subscribe to our travel newsletter for tips and inspiration
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" onclick="submitContactForm()" 
+                                class="w-full bg-nature-green text-white py-3 px-6 rounded-lg font-semibold hover:bg-forest-green transition-colors transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Schedule Visit Form (Required by assignment) -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h2 class="text-3xl font-bold mb-6 text-nature-green">
+                        <i class="fas fa-calendar-check mr-3"></i>Schedule a Consultation
+                    </h2>
+                    
+                    <form id="scheduleForm" class="space-y-6">
+                        <!-- Name Field -->
+                        <div class="relative">
+                            <input type="text" id="consultName" name="consultName" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-nature-green focus:border-transparent outline-none peer"
+                                   placeholder=" ">
+                            <label for="consultName" class="absolute left-4 top-3 text-gray-500 transition-all duration-300 pointer-events-none peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-nature-green peer-valid:-top-2 peer-valid:text-sm">
+                                Full Name *
+                            </label>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="relative">
+                            <input type="email" id="consultEmail" name="consultEmail" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-nature-green focus:border-transparent outline-none peer"
+                                   placeholder=" ">
+                            <label for="consultEmail" class="absolute left-4 top-3 text-gray-500 transition-all duration-300 pointer-events-none peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-nature-green peer-valid:-top-2 peer-valid:text-sm">
+                                Email Address *
+                            </label>
+                        </div>
+
+                        <!-- Preferred Date -->
+                        <div>
+                            <label for="preferredDate" class="block text-sm font-medium text-gray-700 mb-2">Preferred Date</label>
+                            <input type="date" id="preferredDate" name="preferredDate" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-nature-green focus:border-transparent outline-none">
+                        </div>
+
+                        <!-- Preferred Time -->
+                        <div>
+                            <label for="preferredTime" class="block text-sm font-medium text-gray-700 mb-2">Preferred Time</label>
+                            <select id="preferredTime" name="preferredTime" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-nature-green focus:border-transparent outline-none">
+                                <option value="">Select preferred time</option>
+                                <option value="9:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                            </select>
+                        </div>
+
+                        <!-- Consultation Type -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Consultation Type</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="consultationType" value="trip-planning" 
+                                           class="w-4 h-4 text-nature-green bg-gray-100 border-gray-300 focus:ring-nature-green">
+                                    <span class="ml-2 text-sm text-gray-700">Trip Planning</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="consultationType" value="travel-advice" 
+                                           class="w-4 h-4 text-nature-green bg-gray-100 border-gray-300 focus:ring-nature-green">
+                                    <span class="ml-2 text-sm text-gray-700">Travel Advice</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="consultationType" value="photography-tour" 
+                                           class="w-4 h-4 text-nature-green bg-gray-100 border-gray-300 focus:ring-nature-green">
+                                    <span class="ml-2 text-sm text-gray-700">Photography Tour</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="consultationType" value="group-travel" 
+                                           class="w-4 h-4 text-nature-green bg-gray-100 border-gray-300 focus:ring-nature-green">
+                                    <span class="ml-2 text-sm text-gray-700">Group Travel</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Special Requirements -->
+                        <div class="relative">
+                            <textarea id="specialRequirements" name="specialRequirements" rows="4"
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-nature-green focus:border-transparent outline-none peer resize-none"
+                                      placeholder=" "></textarea>
+                            <label for="specialRequirements" class="absolute left-4 top-3 text-gray-500 transition-all duration-300 pointer-events-none peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-nature-green peer-valid:-top-2 peer-valid:text-sm">
+                                Special Requirements or Questions
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" onclick="submitScheduleForm()"
+                                class="w-full bg-sunset-orange text-white py-3 px-6 rounded-lg font-semibold hover:bg-opacity-90 transition-colors transform hover:scale-105">
+                            <i class="fas fa-calendar-plus mr-2"></i>Schedule Consultation
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-nature-green">Other Ways to Reach Us</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Office Location -->
+                <div class="text-center">
+                    <div class="bg-nature-green text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Visit Our Office</h3>
+                    <p class="text-gray-600 font-merriweather">123 Adventure Street<br>Travel District<br>Sydney, NSW 2000<br>Australia</p>
+                </div>
+
+                <!-- Phone Contact -->
+                <div class="text-center">
+                    <div class="bg-sunset-orange text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Call Us</h3>
+                    <p class="text-gray-600 font-merriweather">
+                        Phone: +61 2 9000 0000<br>
+                        WhatsApp: +61 400 000 000<br>
+                        Available: Mon-Fri 9AM-6PM<br>
+                        Emergency: 24/7 Support
+                    </p>
+                </div>
+
+                <!-- Email Contact -->
+                <div class="text-center">
+                    <div class="bg-forest-green text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Email Us</h3>
+                    <p class="text-gray-600 font-merriweather">
+                        General: info@wanderlusttrails.com<br>
+                        Support: help@wanderlusttrails.com<br>
+                        Press: media@wanderlusttrails.com<br>
+                        Partnerships: partners@wanderlusttrails.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-nature-green">Frequently Asked Questions</h2>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-3 text-nature-green">How do I plan my first solo trip?</h3>
+                    <p class="text-gray-600 font-merriweather">Start with destinations known for solo travelers, research local customs, book accommodations in advance, and always share your itinerary with someone back home. Check out our comprehensive solo travel guide for detailed tips.</p>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-3 text-nature-green">What's the best time to visit each continent?</h3>
+                    <p class="text-gray-600 font-merriweather">This varies greatly by destination! Generally, spring and fall offer mild weather for most places. Europe is beautiful in late spring through early fall, Asia has different seasons depending on monsoons, and the best time for Africa depends on wildlife viewing goals.</p>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-3 text-nature-green">Do you offer group travel packages?</h3>
+                    <p class="text-gray-600 font-merriweather">While we primarily focus on travel inspiration and guides, we partner with trusted tour operators for group adventures. Contact us for recommendations based on your interests and budget.</p>
+                </div>
+
+                <!-- FAQ List (Required by assignment) -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-3 text-nature-green">What travel documents do I need?</h3>
+                    <p class="text-gray-600 font-merriweather mb-3">Essential travel documents include:</p>
+                    <ul class="text-gray-600 font-merriweather space-y-1 ml-6">
+                        <li>• Valid passport (at least 6 months remaining)</li>
+                        <li>• Visa (if required for destination)</li>
+                        <li>• Travel insurance documentation</li>
+                        <li>• Vaccination certificates (if applicable)</li>
+                        <li>• Emergency contact information</li>
+                        <li>• Copies of all important documents</li>
+                        <li>• International driving permit (if planning to drive)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-mountain text-2xl text-nature-green"></i>
+                        <span class="text-xl font-bold">Wanderlust Trails</span>
+                    </div>
+                    <p class="text-gray-400 font-merriweather">Inspiring wanderers to explore the world's most beautiful destinations through authentic travel stories and practical guides.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="destinations.html" class="text-gray-400 hover:text-white transition-colors">Destinations</a></li>
+                        <li><a href="traveltip.html" class="text-gray-400 hover:text-white transition-colors">Travel Tips</a></li>
+                        <li><a href="packing-lists.html" class="text-gray-400 hover:text-white transition-colors">Packing Lists</a></li>
+                        <li><a href="photo-essays.html" class="text-gray-400 hover:text-white transition-colors">Photo Essays</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-google-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 Wanderlust Trails. All rights reserved. | Designed with <i class="fas fa-heart text-red-500"></i> for travelers worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <!-- JavaScript -->
+<script>
+    // Mobile Menu Toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Budget Range Slider
+    const budgetSlider = document.getElementById('budget');
+    const budgetValue = document.getElementById('budgetValue');
+
+    budgetSlider.addEventListener('input', function () {
+        const value = parseInt(this.value);
+        if (value >= 10000) {
+            budgetValue.textContent = '$10,000+';
+        } else {
+            budgetValue.textContent = '$' + value.toLocaleString();
+        }
+    });
+
+    // Contact Form Submission (Popup)
+    function submitContactForm() {
+        event.preventDefault();
+        const popup = window.open('', 'ContactSuccess', 'width=500,height=400,scrollbars=yes,resizable=yes');
+        popup.document.write(`
+            <html>
+            <head>
+                <title>Message Sent Successfully</title>
+                <style>
+                    body { 
+                        font-family: 'Arial', sans-serif; 
+                        padding: 40px; 
+                        background: linear-gradient(135deg, #2D5016 0%, #355E3B 100%); 
+                        color: white; 
+                        text-align: center; 
+                        margin: 0;
+                    }
+                    h1 { font-size: 28px; margin-bottom: 20px; }
+                    p { font-size: 18px; }
+                </style>
+            </head>
+            <body>
+                <h1>Thank You for Reaching Out!</h1>
+                <p>Your message has been received. We'll be in touch soon.</p>
+            </body>
+            </html>
+        `);
+        popup.document.close();
+
+        document.getElementById('contactForm').reset();
+        budgetValue.textContent = '$2,500';
+    }
+
+    // Schedule Consultation Form Submission (Popup)
+    function submitScheduleForm() {
+        event.preventDefault();
+        const popup = window.open('', 'ScheduleSuccess', 'width=500,height=400,scrollbars=yes,resizable=yes');
+        popup.document.write(`
+            <html>
+            <head>
+                <title>Consultation Scheduled</title>
+                <style>
+                    body { 
+                        font-family: 'Arial', sans-serif; 
+                        padding: 40px; 
+                        background: linear-gradient(135deg, #FF6B35 0%, #FF9A57 100%); 
+                        color: white; 
+                        text-align: center; 
+                        margin: 0;
+                    }
+                    h1 { font-size: 28px; margin-bottom: 20px; }
+                    p { font-size: 18px; }
+                </style>
+            </head>
+            <body>
+                <h1>Your Consultation is Booked!</h1>
+                <p>We'll confirm your appointment shortly via email.</p>
+            </body>
+            </html>
+        `);
+        popup.document.close();
+
+        document.getElementById('scheduleForm').reset();
+    }
+</script>

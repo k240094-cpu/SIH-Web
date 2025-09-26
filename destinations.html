@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - Wanderlust Trails</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'merriweather': ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        'nature-green': '#2D5016',
+                        'earth-brown': '#8B4513',
+                        'sky-blue': '#87CEEB',
+                        'sunset-orange': '#FF6B35',
+                        'forest-green': '#355E3B',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .destination-card {
+            transition: all 0.3s ease;
+        }
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .parallax-destination {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./images/peralexDestination.jpeg');
+        }
+    </style>
+</head>
+<body class="font-poppins">
+    <!-- Sticky Header -->
+    <header class="sticky-header bg-white shadow-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-mountain text-2xl text-nature-green"></i>
+                    <span class="text-2xl font-bold text-nature-green">Wanderlust Trails</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-nature-green transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-nature-green transition-colors">About Us</a>
+                    <div class="relative group">
+                        <a href="destinations.html" class="text-gray-700 hover:text-nature-green transition-colors">Destinations</a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="asia.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Asia</a>
+                            <a href="europe.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Europe</a>
+                            <a href="northamerica.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">North America</a>
+                            <a href="southamerica.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">South America</a>
+                            <a href="africa.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Africa</a>
+                        </div>
+                    </div>
+                    <a href="reservations.html" class="text-gray-700 hover:text-nature-green transition-colors">hotel & Resort</a>
+                     <div class="relative group">
+                        <a href="traveltip.html" class="text-gray-700 hover:text-nature-green transition-colors">Travel</a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="Luxary.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Luxary Travel</a>
+        
+                    </div>
+                    </div>
+                    <a href="contact.html" class="text-gray-700 hover:text-nature-green transition-colors">Contact</a>
+                    <a href="career.html" class="text-gray-700 hover:text-nature-green transition-colors">Career</a>
+                    <a href="reference.html" class="text-gray-700 hover:text-nature-green transition-colors">Reference</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-2xl text-nature-green"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-nature-green">Home</a>
+                <a href="about.html" class="block py-2 text-gray-700 hover:text-nature-green">About Us</a>
+                 <a href="destinations.html" class="text-nature-green font-semibold">Destinations</a>
+               <div class="pl-4 border-l-2 border-gray-200 ml-4">
+                    <a href="asia.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Asia</a>
+                    <a href="europe.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Europe</a>
+                    <a href="northamerica.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• North America</a>
+                    <a href="southamerica.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• South America</a>
+                    <a href="africa.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Africa</a>
+                </div>
+                <a href="reservations.html" class="block py-2 text-gray-700 hover:text-nature-green">Hotel & Resort</a>
+                <a href="traveltip.html" class="block py-2 text-gray-700 hover:text-nature-green">Travel</a>
+                     <div class="pl-4 border-l-2 border-gray-200 ml-4">
+                    <a href="luxary.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Luxury Travel</a>
+                </div>
+                <a href="contact.html" class="block py-2 text-gray-700 hover:text-nature-green">Contact</a>
+                <a href="cerrer.html" class="block py-2 text-gray-700 hover:text-nature-green">Career</a>
+                <a href="references.html" class="block py-2 text-gray-700 hover:text-nature-green">Reference</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="parallax-destination h-96 flex items-center justify-center text-white">
+        <div class="text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">Explore Destinations</h1>
+            <p class="text-xl md:text-2xl font-merriweather">Discover breathtaking places around the globe</p>
+        </div>
+    </section>
+
+    <!-- Destination Categories -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-nature-green">Choose Your Adventure</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Asia -->
+                <div class="destination-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="./images/asia.jpeg" 
+                         alt="Asia Destinations" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-nature-green">
+                            <i class="fas fa-torii-gate mr-2"></i>Asia
+                        </h3>
+                        <p class="text-gray-600 font-merriweather mb-4">From ancient temples to bustling cities, discover the mystique of the East.</p>
+                        <ul class="text-sm text-gray-500 mb-4">
+                            <li>• Japan & Cherry Blossoms</li>
+                            <li>• Thailand's Tropical Paradise</li>
+                            <li>• India's Cultural Heritage</li>
+                            <li>• Nepal's Mountain Peaks</li>
+                        </ul>
+                        <button onclick="showAsiaDetails()" class="w-full bg-nature-green text-white py-2 rounded-full hover:bg-forest-green transition-colors">
+                            Explore Asia
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Europe -->
+                <div class="destination-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="./images/europe.jpeg.jpg" 
+                         alt="Europe Destinations" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-nature-green">
+                            <i class="fas fa-landmark mr-2"></i>Europe
+                        </h3>
+                        <p class="text-gray-600 font-merriweather mb-4">Rich history, stunning architecture, and diverse cultures await your discovery.</p>
+                        <ul class="text-sm text-gray-500 mb-4">
+                            <li>• Italian Renaissance Cities</li>
+                            <li>• Swiss Alpine Adventures</li>
+                            <li>• Greek Island Hopping</li>
+                            <li>• French Countryside</li>
+                        </ul>
+                        <a href="europe.html" class="block w-full bg-nature-green text-white py-2 rounded-full hover:bg-forest-green transition-colors text-center">
+                            Explore Europe
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Americas -->
+                <div class="destination-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="./images/america.jpeg" 
+                         alt="Americas Destinations" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-nature-green">
+                            <i class="fas fa-mountain mr-2"></i>Americas
+                        </h3>
+                        <p class="text-gray-600 font-merriweather mb-4">From vast wilderness to vibrant cities, the New World offers endless adventures.</p>
+                        <ul class="text-sm text-gray-500 mb-4">
+                            <li>• Patagonia Trekking</li>
+                            <li>• Canadian Rockies</li>
+                            <li>• Amazon Rainforest</li>
+                            <li>• USA National Parks</li>
+                        </ul>
+                        <a href="americas.html" class="block w-full bg-nature-green text-white py-2 rounded-full hover:bg-forest-green transition-colors text-center">
+                            Explore Americas
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Africa -->
+                <div class="destination-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="./images/africa.jpeg" 
+                         alt="Africa Destinations" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-nature-green">
+                            <i class="fas fa-paw mr-2"></i>Africa
+                        </h3>
+                        <p class="text-gray-600 font-merriweather mb-4">Experience wildlife safaris, ancient pyramids, and diverse landscapes.</p>
+                        <ul class="text-sm text-gray-500 mb-4">
+                            <li>• Kenya Safari Adventure</li>
+                            <li>• Egyptian Pyramids</li>
+                            <li>• South African Wine Country</li>
+                            <li>• Morocco's Imperial Cities</li>
+                        </ul>
+                        <a href="africa.html" class="block w-full bg-nature-green text-white py-2 rounded-full hover:bg-forest-green transition-colors text-center">
+                            Explore Africa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Destinations -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-nature-green">Featured Destinations</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Destination 1 -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all">
+                    <img src="./images/bali.avif" 
+                         alt="Bali Indonesia" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Bali, Indonesia</h3>
+                        <p class="text-gray-600 font-merriweather mb-4">Tropical paradise with ancient temples, lush rice terraces, and pristine beaches.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-clock mr-1"></i>7-14 days
+                            </span>
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-thermometer-half mr-1"></i>26-30°C
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Destination 2 -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all">
+                    <img src="./images/swiss.jpg" 
+                         alt="Swiss Alps" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Swiss Alps, Switzerland</h3>
+                        <p class="text-gray-600 font-merriweather mb-4">Majestic mountain peaks, crystal-clear lakes, and charming alpine villages.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-clock mr-1"></i>5-10 days
+                            </span>
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-thermometer-half mr-1"></i>15-25°C
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Destination 3 -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all">
+                    <img src="./images/greece.avif" 
+                         alt="Santorini Greece" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Santorini, Greece</h3>
+                        <p class="text-gray-600 font-merriweather mb-4">Iconic white buildings, stunning sunsets, and Mediterranean charm.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-clock mr-1"></i>4-7 days
+                            </span>
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-thermometer-half mr-1"></i>20-28°C
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Destination 4 -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all">
+                    <img src="./images/chile.jpg" 
+                         alt="Patagonia" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Patagonia, Chile</h3>
+                        <p class="text-gray-600 font-merriweather mb-4">Rugged wilderness, dramatic landscapes, and world-class trekking opportunities.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-clock mr-1"></i>10-21 days
+                            </span>
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-thermometer-half mr-1"></i>5-15°C
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Destination 5 -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all">
+                    <img src="./images/tanzania.jpg" 
+                         alt="Serengeti Tanzania" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Serengeti, Tanzania</h3>
+                        <p class="text-gray-600 font-merriweather mb-4">Epic wildlife migration, Big Five safaris, and authentic African adventure.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-clock mr-1"></i>7-12 days
+                            </span>
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-thermometer-half mr-1"></i>18-26°C
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Destination 6 -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all">
+                    <img src="./images/japan.avif" 
+                         alt="Kyoto Japan" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Kyoto, Japan</h3>
+                        <p class="text-gray-600 font-merriweather mb-4">Ancient temples, traditional gardens, and rich cultural heritage.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-clock mr-1"></i>5-8 days
+                            </span>
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-thermometer-half mr-1"></i>12-25°C
+                            </span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Planning Section -->
+    <section class="py-16 bg-nature-green text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Plan Your Adventure?</h2>
+            <p class="text-lg mb-8 font-merriweather">Get personalized recommendations and expert travel advice</p>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <i class="fas fa-route text-4xl mb-4 text-sunset-orange"></i>
+                    <h3 class="text-xl font-semibold mb-2">Custom Itineraries</h3>
+                    <p class="text-sm">Tailored travel plans based on your interests and budget</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-users text-4xl mb-4 text-sunset-orange"></i>
+                    <h3 class="text-xl font-semibold mb-2">Expert Guides</h3>
+                    <p class="text-sm">Connect with local experts and experienced travelers</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-shield-alt text-4xl mb-4 text-sunset-orange"></i>
+                    <h3 class="text-xl font-semibold mb-2">Travel Safety</h3>
+                    <p class="text-sm">Up-to-date safety information and travel advisories</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-mountain text-2xl text-nature-green"></i>
+                        <span class="text-xl font-bold">Wanderlust Trails</span>
+                    </div>
+                    <p class="text-gray-400 font-merriweather">Inspiring wanderers to explore the world's most beautiful destinations through authentic travel stories and practical guides.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="destinations.html" class="text-gray-400 hover:text-white transition-colors">Destinations</a></li>
+                        <li><a href="traveltip.html" class="text-gray-400 hover:text-white transition-colors">Travel Tips</a></li>
+                        <li><a href="packing-lists.html" class="text-gray-400 hover:text-white transition-colors">Packing Lists</a></li>
+                        <li><a href="photo-essays.html" class="text-gray-400 hover:text-white transition-colors">Photo Essays</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors"><i class="fab fa-google-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 Wanderlust Trails. All rights reserved. | Designed with <i class="fas fa-heart text-red-500"></i> for travelers worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Asia Details Popup (Required JavaScript popup)
+        function showAsiaDetails() {
+            const popup = window.open('', 'AsiaDetails', 'width=600,height=500,scrollbars=yes,resizable=yes');
+            popup.document.write(`
+                <html>
+                <head>
+                    <title>Asia Destinations - Detailed Guide</title>
+                    <style>
+                        body { 
+                            font-family: 'Arial', sans-serif; 
+                            padding: 30px; 
+                            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                            color: white; 
+                            line-height: 1.6;
+                        }
+                        h1 { color: #fff; margin-bottom: 20px; text-align: center; }
+                        .destination { 
+                            background: rgba(255,255,255,0.1); 
+                            padding: 20px; 
+                            margin-bottom: 20px; 
+                            border-radius: 10px; 
+                            backdrop-filter: blur(10px);
+                        }
+                        .destination h3 { color: #FFD700; margin-bottom: 10px; }
+                        .destination p { margin-bottom: 10px; }
+                        .highlight { color: #FF6B35; font-weight: bold; }
+                        button { 
+                            background: #FF6B35; 
+                            color: white; 
+                            padding: 12px 24px; 
+                            border: none; 
+                            border-radius: 25px; 
+                            cursor: pointer; 
+                            font-size: 16px; 
+                            margin-top: 20px;
+                            display: block;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+                        button:hover { background: #e55a2e; }
+                    </style>
+                </head>
+                <body>
+                    <h1>🏯 Discover Asia's Wonders</h1>
+                    
+                    <div class="destination">
+                        <h3>🌸 Japan - Land of Rising Sun</h3>
+                        <p><span class="highlight">Best Time:</span> March-May (Cherry Blossom), October-November (Fall colors)</p>
+                        <p><span class="highlight">Must Visit:</span> Tokyo's modern skyline, Kyoto's ancient temples, Mount Fuji's majesty</p>
+                        <p><span class="highlight">Experience:</span> Traditional tea ceremonies, bullet train rides, authentic sushi</p>
+                    </div>
+                    
+                    <div class="destination">
+                        <h3>🏝️ Thailand - Tropical Paradise</h3>
+                        <p><span class="highlight">Best Time:</span> November-March (Cool & Dry season)</p>
+                        <p><span class="highlight">Must Visit:</span> Bangkok's Grand Palace, Phuket's beaches, Chiang Mai's mountains</p>
+                        <p><span class="highlight">Experience:</span> Thai massage, street food tours, elephant sanctuaries</p>
+                    </div>
+                    
+                    <div class="destination">
+                        <h3>🕌 India - Cultural Kaleidoscope</h3>
+                        <p><span class="highlight">Best Time:</span> October-March (Pleasant weather)</p>
+                        <p><span class="highlight">Must Visit:</span> Taj Mahal, Kerala backwaters, Rajasthan palaces</p>
+                        <p><span class="highlight">Experience:</span> Yoga retreats, spice markets, colorful festivals</p>
+                    </div>
+                    
+                    <div class="destination">
+                        <h3>🏔️ Nepal - Roof of the World</h3>
+                        <p><span class="highlight">Best Time:</span> March-May, September-November</p>
+                        <p><span class="highlight">Must Visit:</span> Everest Base Camp, Kathmandu's temples, Pokhara's lakes</p>
+                        <p><span class="highlight">Experience:</span> Mountain trekking, Buddhist monasteries, Sherpa culture</p>
+                    </div>
+                    
+                    <button onclick="window.close()">Plan My Asia Adventure!</button>
+                </body>
+                </html>
+            `);
+        }
+
+        // Scroll animations
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }

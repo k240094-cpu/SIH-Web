@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packing Lists - Wanderlust Trails</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'poppins': ['Poppins', 'sans-serif'],
+            'merriweather': ['Merriweather', 'serif'],
+          },
+          colors: {
+            'nature-green': '#2D5016',
+            'earth-brown': '#8B4513',
+            'sky-blue': '#87CEEB',
+            'sunset-orange': '#FF6B35',
+            'forest-green': '#355E3B',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .packing-parallax {
+      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('https://images.unsplash.com/photo-1502920917128-1aa500764b8a?ixlib=rb-4.0.3');
+    }
+  </style>
+</head>
+<body class="font-poppins">
+
+  <!-- Header -->
+  <header class="sticky-header bg-white shadow-lg">
+    <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <i class="fas fa-mountain text-2xl text-nature-green"></i>
+        <span class="text-2xl font-bold text-nature-green">Wanderlust Trails</span>
+      </div>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="hover:text-nature-green">Home</a>
+        <a href="destinations.html" class="hover:text-nature-green">Destinations</a>
+        <a href="traveltip.html" class="hover:text-nature-green">Travel Tips</a>
+        <a href="packing-lists.html" class="hover:text-nature-green">Packing Lists</a>
+        <a href="photo-essays.html" class="hover:text-nature-green">Photo Essays</a>
+        <a href="about.html" class="hover:text-nature-green">About</a>
+        <a href="contact.html" class="hover:text-nature-green">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="packing-parallax h-80 flex items-center justify-center text-white parallax">
+    <div class="text-center">
+      <h1 class="text-5xl font-bold mb-4">Packing Lists</h1>
+      <p class="text-xl font-merriweather">Pack smart, travel light, and never forget the essentials</p>
+    </div>
+  </section>
+
+  <!-- Packing Lists Content -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-nature-green mb-12">Essential Packing Guides</h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Travel Documents -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-bold text-nature-green mb-4 flex items-center">
+            <i class="fas fa-passport mr-2 text-sunset-orange"></i> Travel Documents
+          </h3>
+          <ul class="space-y-2 text-gray-700 font-merriweather">
+            <li>✔️ Passport & Visa</li>
+            <li>✔️ Flight Tickets</li>
+            <li>✔️ Travel Insurance</li>
+            <li>✔️ Hotel Confirmations</li>
+            <li>✔️ Emergency Contacts</li>
+          </ul>
+        </div>
+
+        <!-- Clothing -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-bold text-nature-green mb-4 flex items-center">
+            <i class="fas fa-tshirt mr-2 text-sunset-orange"></i> Clothing
+          </h3>
+          <ul class="space-y-2 text-gray-700 font-merriweather">
+            <li>✔️ Comfortable Walking Shoes</li>
+            <li>✔️ Weather-appropriate Outfits</li>
+            <li>✔️ Light Jacket / Sweater</li>
+            <li>✔️ Swimwear</li>
+            <li>✔️ Sleepwear & Underwear</li>
+          </ul>
+        </div>
+
+        <!-- Toiletries -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-bold text-nature-green mb-4 flex items-center">
+            <i class="fas fa-tooth mr-2 text-sunset-orange"></i> Toiletries
+          </h3>
+          <ul class="space-y-2 text-gray-700 font-merriweather">
+            <li>✔️ Toothbrush & Toothpaste</li>
+            <li>✔️ Shampoo & Soap</li>
+            <li>✔️ Sunscreen</li>
+            <li>✔️ Personal Medication</li>
+            <li>✔️ Hand Sanitizer & Tissues</li>
+          </ul>
+        </div>
+
+        <!-- Tech & Gadgets -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-bold text-nature-green mb-4 flex items-center">
+            <i class="fas fa-laptop mr-2 text-sunset-orange"></i> Tech & Gadgets
+          </h3>
+          <ul class="space-y-2 text-gray-700 font-merriweather">
+            <li>✔️ Smartphone & Charger</li>
+            <li>✔️ Power Bank</li>
+            <li>✔️ Camera & Memory Cards</li>
+            <li>✔️ Travel Adapter</li>
+            <li>✔️ Headphones</li>
+          </ul>
+        </div>
+
+        <!-- Health & Safety -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-bold text-nature-green mb-4 flex items-center">
+            <i class="fas fa-first-aid mr-2 text-sunset-orange"></i> Health & Safety
+          </h3>
+          <ul class="space-y-2 text-gray-700 font-merriweather">
+            <li>✔️ First Aid Kit</li>
+            <li>✔️ Face Masks</li>
+            <li>✔️ Insect Repellent</li>
+            <li>✔️ Prescription Medicines</li>
+            <li>✔️ Travel Pillow & Eye Mask</li>
+          </ul>
+        </div>
+
+        <!-- Extras -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-bold text-nature-green mb-4 flex items-center">
+            <i class="fas fa-suitcase-rolling mr-2 text-sunset-orange"></i> Extras
+          </h3>
+          <ul class="space-y-2 text-gray-700 font-merriweather">
+            <li>✔️ Reusable Water Bottle</li>
+            <li>✔️ Snacks</li>
+            <li>✔️ Travel Journal & Pen</li>
+            <li>✔️ Guidebook / Maps</li>
+            <li>✔️ Sunglasses & Hat</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center space-x-2 mb-4">
+          <i class="fas fa-mountain text-2xl text-nature-green"></i>
+          <span class="text-xl font-bold">Wanderlust Trails</span>
+        </div>
+        <p class="text-gray-400 font-merriweather">Inspiring wanderers to explore the world's most beautiful destinations through authentic travel stories and practical guides.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+          <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+          <li><a href="privacy.html" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+          <li><a href="terms.html" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Categories</h3>
+        <ul class="space-y-2">
+          <li><a href="destinations.html" class="text-gray-400 hover:text-white">Destinations</a></li>
+          <li><a href="traveltip.html" class="text-gray-400 hover:text-white">Travel Tips</a></li>
+          <li><a href="packing-lists.html" class="text-gray-400 hover:text-white">Packing Lists</a></li>
+          <li><a href="photo-essays.html" class="text-gray-400 hover:text-white">Photo Essays</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+        <div class="flex space-x-4 text-2xl">
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+      <p>&copy; 2025 Wanderlust Trails. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- W3C Validation Icon -->
+  <div style="position: fixed; bottom: 20px; right: 20px;">
+    <a href="http://validator.w3.org/">
+      <img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML" width="80" height="31">
+    </a>
+  </div>
+</body>
+</html>
+
+<script>
+    // Mobile Menu Toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>

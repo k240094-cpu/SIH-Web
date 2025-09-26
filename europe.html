@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Tips - Wanderlust Trails</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'poppins': ['Poppins', 'sans-serif'],
+            'merriweather': ['Merriweather', 'serif'],
+          },
+          colors: {
+            'nature-green': '#2D5016',
+            'earth-brown': '#8B4513',
+            'sky-blue': '#87CEEB',
+            'sunset-orange': '#FF6B35',
+            'forest-green': '#355E3B',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .tips-parallax {
+      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3');
+    }
+    .accordion-content { display: none; }
+  </style>
+</head>
+<body class="font-poppins">
+
+  <!-- Header -->
+    <header class="sticky-header bg-white shadow-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-mountain text-2xl text-nature-green"></i>
+                    <span class="text-2xl font-bold text-nature-green">Wanderlust Trails</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-nature-green transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-nature-green transition-colors">About Us</a>
+                    <div class="relative group">
+                        <a href="destinations.html" class="text-gray-700 hover:text-nature-green transition-colors">Destinations</a>
+                        <div class="absolute left-0 z-20 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="asia.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Asia</a>
+                            <a href="europe.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Europe</a>
+                            <a href="northamerica.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">North America</a>
+                            <a href="southamerica.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">South America</a>
+                            <a href="africa.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Africa</a>
+                        </div>
+                    </div>
+                    <a href="reservations.html" class="text-gray-700 hover:text-nature-green transition-colors">hotel & Resort</a>
+                     <div class="relative group">
+                        <a href="traveltip.html" class="text-gray-700 hover:text-nature-green transition-colors">Travel</a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="Luxary.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Luxary Travel</a>
+        
+                    </div>
+                    </div>
+                    <a href="contact.html" class="text-gray-700 hover:text-nature-green transition-colors">Contact</a>
+                    <a href="career.html" class="text-gray-700 hover:text-nature-green transition-colors">Career</a>
+                    <a href="reference.html" class="text-gray-700 hover:text-nature-green transition-colors">Reference</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-2xl text-nature-green"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-nature-green">Home</a>
+                <a href="about.html" class="block py-2 text-gray-700 hover:text-nature-green">About Us</a>
+                 <a href="destinations.html" class="text-nature-green font-semibold">Destinations</a>
+               <div class="pl-4 border-l-2 border-gray-200 ml-4">
+                    <a href="asia.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Asia</a>
+                    <a href="europe.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Europe</a>
+                    <a href="northamerica.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• North America</a>
+                    <a href="southamerica.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• South America</a>
+                    <a href="africa.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Africa</a>
+                </div>
+                <a href="reservations.html" class="block py-2 text-gray-700 hover:text-nature-green">Hotel & Resort</a>
+                <a href="traveltip.html" class="block py-2 text-gray-700 hover:text-nature-green">Travel</a>
+                     <div class="pl-4 border-l-2 border-gray-200 ml-4">
+                    <a href="luxary.html" class="block py-1 text-sm text-gray-600 hover:text-nature-green">• Luxury Travel</a>
+                </div>
+                <a href="contact.html" class="block py-2 text-gray-700 hover:text-nature-green">Contact</a>
+                <a href="cerrer.html" class="block py-2 text-gray-700 hover:text-nature-green">Career</a>
+                <a href="references.html" class="block py-2 text-gray-700 hover:text-nature-green">Reference</a>
+            </div>
+        </nav>
+    </header>
+
+<!-- Hero Section -->
+    <section class="h-96 flex items-center justify-center text-white relative" 
+             style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./images/europeHero.jpg'); background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <div class="text-center z-10">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">Explore Europe</h1>
+            <p class="text-xl md:text-2xl font-merriweather">Where history comes alive in every cobblestone</p>
+        </div>
+    </section>
+
+    <!-- Featured European Destinations -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-nature-green">
+                <i class="fas fa-landmark mr-3"></i>Top European Destinations
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Italy -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all">
+                    <img src="./images/italy.jpg" 
+                         alt="Venice Italy Canals" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-nature-green">
+                            🇮🇹 Italy
+                        </h3>
+                        <p class="text-gray-600 font-merriweather mb-3">Renaissance art, Roman history, and culinary perfection. From Venice's canals to Tuscany's vineyards, experience la dolce vita.</p>
+                        <div class="bg-gray-50 p-3 rounded-lg mb-3">
+                            <p class="text-sm text-gray-700"><strong>Must-Visit:</strong> Rome's Colosseum, Florence's art galleries, Amalfi Coast drives, Venice gondola rides</p>
+                            <p class="text-sm text-gray-700"><strong>Best Time:</strong> April-June, September-October</p>
+                            <p class="text-sm text-gray-700"><strong>Perfect For:</strong> Art lovers, food enthusiasts, history buffs</p>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-500">
+                            <span><i class="fas fa-thermometer-half mr-1"></i>18-28°C</span>
+                            <span><i class="fas fa-clock mr-1"></i>7-14 days</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- France -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all">
+                    <img src="./images/france.avif" 
+                         alt="Paris France Eiffel Tower" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-nature-green">
+                            🇫🇷 France
+                        </h3>
+                        <p class="text-gray-600 font-merriweather mb-3">City of light, wine regions, and châteaux. From Parisian elegance to Provence's lavender fields and Alpine adventures.</p>
+                        <div class="bg-gray-50 p-3 rounded-lg mb-3">
+                            <p class="text-sm text-gray-700"><strong>Must-Visit:</strong> Eiffel Tower, Louvre Museum, Loire Valley castles, French Riviera beaches</p>
+                            <p class="text-sm text-gray-700"><strong>Best Time:</strong> May-September, December (Christmas markets)</p>
+                            <p class="text-sm text-gray-700"><strong>Perfect For:</strong> Culture seekers, wine lovers, romantic getaways</p>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-500">
+                            <span><i class="fas fa-thermometer-half mr-1"></i>15-25°C</span>
+                            <span><i class="fas fa-clock mr-1"></i>7-12 days</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Greece -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all">
+                    <img src="./images/greece.avif" 
+                         alt="Santorini Greece White Buildings" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-nature-green">
+                            🇬🇷 Greece
+                        </h3>
+                        <p class="text-gray-600 font-merriweather mb-3">Ancient mythology meets Mediterranean beauty. Island hop through azure waters or explore Athens' archaeological wonders.</p>
+                        <div class="bg-gray-50 p-3 rounded-lg mb-3">
+                            <p class="text-sm text-gray-700"><strong>Must-Visit:</strong> Santorini sunsets, Mykonos beaches, Athens Acropolis, Delphi ancient sites</p>
+                            <p class="text-sm text-gray-700"><strong>Best Time:</strong> April-June, September-October</p>
+                            <p class="text-sm text-gray-700"><strong>Perfect For:</strong> Island hoppers, history enthusiasts, beach lovers</p>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-500">
+                            <span><i class="fas fa-thermometer-half mr-1"></i>20-30°C</span>
+                            <span><i class="fas fa-clock mr-1"></i>7-10 days</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Switzerland -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all">
+                    <img src="./images/switzerland.jpg" 
+                         alt="Swiss Alps Mountains" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-nature-green">
+                            🇨🇭 Switzerland
+                        </h3>
+                        <p class="text-gray-600 font-merriweather mb-3">Alpine perfection with pristine lakes and charming villages. World-class skiing, hiking, and scenic train journeys await.</p>
+                        <div class="bg-gray-50 p-3 rounded-lg mb-3">
+                            <p class="text-sm text-gray-700"><strong>Must-Visit:</strong> Matterhorn views, Jungfraujoch railway, Lake Geneva, Interlaken adventures</p>
+                            <p class="text-sm text-gray-700"><strong>Best Time:</strong> June-September (hiking), December-March (skiing)</p>
+                            <p class="text-sm text-gray-700"><strong>Perfect For:</strong> Nature lovers, adventure seekers, luxury travelers</p>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-500">
+                            <span><i class="fas fa-thermometer-half mr-1"></i>15-25°C</span>
+                            <span><i class="fas fa-clock mr-1"></i>5-8 days</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Spain -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all">
+                    <img src="./images/spain.jpg" 
+                         alt="Barcelona Spain Architecture" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-nature-green">
+                            🇪🇸 Spain
+                        </h3>
+                        <p class="text-gray-600 font-merriweather mb-3">Passionate flamenco, stunning architecture, and vibrant nightlife. From Barcelona's Gaudí to Seville's charm and Madrid's museums.</p>
+                        <div class="bg-gray-50 p-3 rounded-lg mb-3">
+                            <p class="text-sm text-gray-700"><strong>Must-Visit:</strong> Sagrada Familia, Alhambra palace, Park Güell, Guggenheim Bilbao</p>
+                            <p class="text-sm text-gray-700"><strong>Best Time:</strong> March-May, September-November</p>
+                            <p class="text-sm text-gray-700"><strong>Perfect For:</strong> Architecture fans, food lovers, party enthusiasts</p>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-500">
+                            <span><i class="fas fa-thermometer-half mr-1"></i>16-26°C</span>
+                            <span><i class="fas fa-clock mr-1"></i>8-12 days</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Germany -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all">
+                    <img src="./images/grmany.jpg" 
+                         alt="Neuschwanstein Castle Germany" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-nature-green">
+                            🇩🇪 Germany
+                        </h3>
+                        <p class="text-gray-600 font-merriweather mb-3">Fairy-tale castles, Oktoberfest celebrations, and rich history. From Berlin's modern energy to Bavaria's traditional charm.</p>
+                        <div class="bg-gray-50 p-3 rounded-lg mb-3">
+                            <p class="text-sm text-gray-700"><strong>Must-Visit:</strong> Neuschwanstein Castle, Berlin Wall, Rhine Valley, Christmas markets</p>
+                            <p class="text-sm text-gray-700"><strong>Best Time:</strong> May-September, December (Christmas season)</p>
+                            <p class="text-sm text-gray-700"><strong>Perfect For:</strong> History buffs, beer enthusiasts, castle explorers</p>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-500">
+                            <span><i class="fas fa-thermometer-half mr-1"></i>12-22°C</span>
+                            <span><i class="fas fa-clock mr-1"></i>6-10 days</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Europe Travel Information -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-nature-green">Essential Europe Travel Information</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Travel Tips -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 text-nature-green">
+                        <i class="fas fa-lightbulb mr-2"></i>Europe Travel Tips
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-sunset-orange pl-4">
+                            <h4 class="font-semibold text-lg mb-2 text-forest-green">💰 Money Matters</h4>
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• Most countries use Euro (€) currency</li>
+                                <li>• Credit cards widely accepted</li>
+                                <li>• Notify banks before traveling</li>
+                                <li>• Tipping: 10-15% in restaurants</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="border-l-4 border-sky-blue pl-4">
+                            <h4 class="font-semibold text-lg mb-2 text-forest-green">🚂 Transportation</h4>
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• Eurail Pass for multiple countries</li>
+                                <li>• Budget airlines for quick hops</li>
+                                <li>• Excellent public transport systems</li>
+                                <li>• Walking cities with historic centers</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-l-4 border-nature-green pl-4">
+                            <h4 class="font-semibold text-lg mb-2 text-forest-green">📱 Practical Tips</h4>
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• EU citizens travel visa-free</li>
+                                <li>• Learn basic local greetings</li>
+                                <li>• Pack for variable weather</li>
+                                <li>• Book popular attractions in advance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What Makes Europe Special -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 text-nature-green">
+                        <i class="fas fa-heart mr-2"></i>Why Choose Europe?
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-nature-green text-white w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Rich History</h4>
+                                <p class="text-gray-600 font-merriweather text-sm">Walk through millennia of human civilization, from ancient Roman ruins to medieval castles and Renaissance masterpieces.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-sunset-orange text-white w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Art & Culture</h4>
+                                <p class="text-gray-600 font-merriweather text-sm">Home to world's greatest museums, from the Louvre to the Prado, plus vibrant festivals and cultural events year-round.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-forest-green text-white w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Culinary Excellence</h4>
+                                <p class="text-gray-600 font-merriweather text-sm">From French pastries to Italian pasta, Spanish tapas to German beer - Europe is a foodie's paradise with distinct regional cuisines.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-sky-blue text-white w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-train"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Easy Travel</h4>
+                                <p class="text-gray-600 font-merriweather text-sm">Efficient transportation networks make country-hopping simple. Visit multiple countries in one trip with seamless connections.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        // Europe Travel Guide Popup (Required JavaScript popup #1)
+        function showEuropeGuide() {
+            const popup = window.open('', 'EuropeGuide', 'width=600,height=500,scrollbars=yes,resizable=yes');
+            popup.document.write(`
+                <html>
+                <head>
+                    <title>Complete Europe Travel Guide</title>
+                    <style>
+                        body { 
+                            font-family: 'Arial', sans-serif; 
+                            padding: 30px; 
+                            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                            color: white; 
+                            margin: 0;
+                            line-height: 1.6;
+                        }
+                        .guide-container {
+                            background: rgba(255,255,255,0.1);
+                            padding: 25px;
+                            border-radius: 15px;
+                            backdrop-filter: blur(10px);
+                        }
+                        h1 { color: #FFD700; text-align: center; margin-bottom: 25px; }
+                        .route { 
+                            background: rgba(255,255,255,0.1); 
+                            padding: 20px; 
+                            margin: 20px 0; 
+                            border-radius: 10px;
+                            border-left: 4px solid #FF6B35;
+                        }
+                        .route h3 { color: #87CEEB; margin-bottom: 10px; }
+                        .day { color: #FFD700; font-weight: bold; }
+                        button { 
+                            background: #2D5016; 
+                            color: white; 
+                            padding: 12px 24px; 
+                            border: none; 
+                            border-radius: 25px; 
+                            cursor: pointer; 
+                            font-size: 16px; 
+                            margin-top: 20px;
+                            display: block;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+                        button:hover { background: #355E3B; }
+                    </style>
+                </head>
+                <body>
+                    <div class="guide-container">
+                        <h1>🗺️ Complete Europe Travel Guide</h1>
+                        
+                        <div class="route">
+                            <h3>🚂 Grand Europe Tour (21 days)</h3>
+                            <p><span class="day">Days 1-3:</span> London - Big Ben, Tower Bridge, British Museum</p>
+                            <p><span class="day">Days 4-6:</span> Paris - Eiffel Tower, Louvre, Versailles</p>
+                            <p><span class="day">Days 7-8:</span> Amsterdam - Canals, Van Gogh Museum</p>
+                            <p><span class="day">Days 9-11:</span> Berlin - History tours, Brandenburg Gate</p>
+                            <p><span class="day">Days 12-14:</span> Prague - Old Town Square, Castle</p>
+                            <p><span class="day">Days 15-17:</span> Vienna - Schönbrunn Palace, coffee culture</p>
+                            <p><span class="day">Days 18-21:</span> Rome - Colosseum, Vatican, pasta tours</p>
+                        </div>
+                        
+                        <div class="route">
+                            <h3>🏖️ Mediterranean Highlights (14 days)</h3>
+                            <p><span class="day">Days 1-3:</span> Barcelona - Sagrada Familia, Park Güell</p>
+                            <p><span class="day">Days 4-6:</span> Nice & Monaco - French Riviera glamour</p>
+                            <p><span class="day">Days 7-9:</span> Rome - Ancient history immersion</p>
+                            <p><span class="day">Days 10-12:</span> Santorini - Sunset views, wine tasting</p>
+                            <p><span class="day">Days 13-14:</span> Athens - Acropolis, Greek cuisine</p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 25px; font-style: italic;">
+                            <p>💡 Pro Tip: Book accommodations 2-3 months in advance for summer travel!</p>
+                        </div>
+                        
+                        <button onclick="window.close()">Start Planning My Trip!</button>
+                    </div>
+                </body>
+                </html>
+            `);
+        }
+
+        // Europe travel alert (Required JavaScript alert)
+        setTimeout(() => {
+            alert("🏰 Europe Travel Alert!\n\nDid you know? The Schengen Agreement allows you to travel between 26 European countries with just one visa!\n\nPerfect for multi-country adventures. Plan your route wisely to maximize your European experience!");
+        }, 3000);
+    </script>
+
+    <!-- W3C HTML5 Validation Icon -->
+    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+        <a href="http://validator.w3.org/check?uri=referer">
+            <img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Strict" height="31" width="80" />
+        </a>
+    </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center space-x-2 mb-4">
+          <i class="fas fa-mountain text-2xl text-nature-green"></i>
+          <span class="text-xl font-bold">Wanderlust Trails</span>
+        </div>
+        <p class="text-gray-400 font-merriweather">Inspiring wanderers to explore the world's most beautiful destinations through authentic travel stories and practical guides.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+          <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+          <li><a href="privacy.html" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+          <li><a href="terms.html" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Categories</h3>
+        <ul class="space-y-2">
+          <li><a href="destinations.html" class="text-gray-400 hover:text-white">Destinations</a></li>
+          <li><a href="traveltip.html" class="text-gray-400 hover:text-white">Travel Tips</a></li>
+          <li><a href="packing-lists.html" class="text-gray-400 hover:text-white">Packing Lists</a></li>
+          <li><a href="photo-essays.html" class="text-gray-400 hover:text-white">Photo Essays</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+        <div class="flex space-x-4 text-2xl">
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+      <p>&copy; 2025 Wanderlust Trails. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleAccordion(button) {
+      const content = button.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+
+    // Mobile Menu Toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
+  <!-- W3C Validation Icon -->
+  <div style="position: fixed; bottom: 20px; right: 20px;">
+    <a href="http://validator.w3.org/">
+      <img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML" width="80" height="31">
+    </a>
+  </div>
+</body>
+</html>
